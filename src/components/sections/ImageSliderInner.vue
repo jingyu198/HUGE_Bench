@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { VueCompareImage } from 'vue3-compare-image'
 import scene1GsImage from '../../../my_eccv/render_compare_1/pose_000000_3dgs.png'
 import scene1MeshImage from '../../../my_eccv/render_compare_1/pose_000000_mesh_flat.png'
@@ -38,10 +38,60 @@ const scenes = [
 ]
 
 const selectedSceneKey = ref(scenes[0].key)
+const loadedSceneMap = ref(
+  Object.fromEntries(scenes.map((scene) => [scene.key, false]))
+)
 
 const currentScene = computed(
   () => scenes.find((scene) => scene.key === selectedSceneKey.value) ?? scenes[0]
 )
+
+const currentSceneLoaded = computed(
+  () => loadedSceneMap.value[currentScene.value.key]
+)
+
+const preloadImage = (src: string) =>
+  new Promise<void>((resolve) => {
+    const image = new Image()
+    image.onload = () => resolve()
+    image.onerror = () => resolve()
+    image.src = src
+  })
+
+const preloadScene = async (scene: (typeof scenes)[number]) => {
+  if (!scene || loadedSceneMap.value[scene.key]) {
+    return
+  }
+
+  await Promise.all([
+    preloadImage(scene.leftImage),
+    preloadImage(scene.rightImage),
+  ])
+
+  loadedSceneMap.value = {
+    ...loadedSceneMap.value,
+    [scene.key]: true,
+  }
+}
+
+const preloadRemainingScenes = async () => {
+  for (const scene of scenes.slice(1)) {
+    await preloadScene(scene)
+  }
+}
+
+watch(selectedSceneKey, async (sceneKey) => {
+  const selectedScene = scenes.find((scene) => scene.key === sceneKey)
+  if (selectedScene) {
+    await preloadScene(selectedScene)
+  }
+}, { immediate: true })
+
+onMounted(() => {
+  window.setTimeout(() => {
+    preloadRemainingScenes()
+  }, 400)
+})
 </script>
 
 <template>
@@ -70,7 +120,12 @@ const currentScene = computed(
                 <div class="compare-layout">
                   <span class="compare-label compare-label-left">3dgs</span>
                   <div class="compare-view">
+                    <div v-if="!currentSceneLoaded" class="compare-loading">
+                      Loading {{ currentScene.label }}...
+                    </div>
                     <VueCompareImage 
+                        v-else
+                        :key="selectedSceneKey"
                         :left-image="currentScene.leftImage" 
                         :right-image="currentScene.rightImage"
                         :hover="true"
@@ -101,6 +156,18 @@ const currentScene = computed(
   flex: 1;
 }
 
+.compare-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  border-radius: 12px;
+  background: #f5f7fa;
+  color: #606266;
+  font-size: 16px;
+  font-weight: 500;
+}
+
 .compare-label {
   width: 68px;
   font-size: 15px;
@@ -116,6 +183,11 @@ const currentScene = computed(
   .compare-label {
     width: 52px;
     font-size: 13px;
+  }
+
+  .compare-loading {
+    min-height: 260px;
+    font-size: 14px;
   }
 }
 </style>
