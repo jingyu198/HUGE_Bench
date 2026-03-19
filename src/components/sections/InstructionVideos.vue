@@ -19,7 +19,17 @@ const videoSources = [media1, media2, media3, media4, media5, media6, media7, me
 const videos = videoSources.map((src, index) => ({
   src,
   title: instructions[index] || `Example ${index + 1}`,
+  startTime: index === 2 ? 1.5 : 0,
 }))
+
+const applyStartTime = (event, startTime) => {
+  if (!startTime) {
+    return
+  }
+
+  const video = event.target
+  video.currentTime = startTime
+}
 </script>
 
 <template>
@@ -30,7 +40,14 @@ const videos = videoSources.map((src, index) => ({
         <div class="videos-grid">
           <article v-for="(video, index) in videos" :key="index" class="video-card">
             <h3 class="video-title">{{ video.title }}</h3>
-            <video class="video-player" :src="video.src" controls playsinline preload="metadata" />
+            <video
+              class="video-player"
+              :src="video.src"
+              controls
+              playsinline
+              preload="metadata"
+              @loadedmetadata="applyStartTime($event, video.startTime)"
+            />
           </article>
         </div>
       </el-col>

@@ -23,7 +23,7 @@ const figures = [
     <el-divider />
 
     <el-row justify="center">
-      <h1 class="section-title">Task definition and Trajectory generation pipeline</h1>
+      <h1 class="section-title">Task Definition and Trajectory Generation Pipeline</h1>
     </el-row>
 
     <el-row justify="center">

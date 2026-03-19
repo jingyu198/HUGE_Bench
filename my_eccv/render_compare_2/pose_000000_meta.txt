@@ -1,0 +1,18 @@
+# compare pair export
+pose_id 0
+base_C_local 43.253014 -211.603943 13.947361
+base_omega_phi_kappa -180.000000 0.000000 51.086078
+C_local 72.000000 -10.000000 113.947357
+omega_phi_kappa -180.000000 0.000000 51.086078
+compare_z_offset 100.000000
+compare_x_override 72.0
+compare_y_override -10.0
+compare_omega_offset_deg 0.000000
+compare_phi_offset_deg 0.000000
+compare_kappa_offset_deg 0.000000
+compare_pitch_from_down_deg 0.000000
+intr_scale 1.000000
+img_scale 1.000000
+white_bg 1
+3dgs_path /mnt/jingyu/ECCV_data/data_traj/task_0/2_city/render_compare/pose_000000_3dgs.png
+mesh_flat_path /mnt/jingyu/ECCV_data/data_traj/task_0/2_city/render_compare/pose_000000_mesh_flat.png
