@@ -28,13 +28,21 @@ const institutes = [
 ]
 
 const resourceButtons = [
-  { label: 'Paper', icon: 'paper' },
+  {
+    label: 'Paper',
+    icon: 'paper',
+    link: 'https://arxiv.org/abs/2603.19822',
+  },
   {
     label: 'Code',
     icon: 'github',
     link: 'https://github.com/jingyu198/HUGE-Bench?tab=readme-ov-file',
   },
-  { label: 'Dataset', icon: 'dataset' },
+  {
+    label: 'Dataset',
+    icon: 'dataset',
+    link: 'https://huggingface.co/datasets/yu781986168/HUGE_PI',
+  },
 ]
 
 const authorNotes = '* Equal contribution; † Corresponding author.'
