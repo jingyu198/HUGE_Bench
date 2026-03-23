@@ -5,7 +5,7 @@ import trajRealVideo from '../../../my_eccv/traj_real.mp4'
 import trajSimVideo from '../../../my_eccv/traj_sim.mp4'
 
 const caption =
-  'Overview and results of the real-to-sim and sim-to-sim comparison experiments. Top-left: the experimental pipeline. Models are trained using either real-world data (real2sim) or synthetic data (sim2sim), and then evaluated in a digital twin environment with multiple random initializations. Top-right: quantitative test results showing the trajectory coverage rate (TCR) across different models under both settings. Bottom: qualitative trajectory comparisons for several representative test cases (Case 1-4). For each case, the predicted trajectory is compared with the ground truth in both real-to-sim and sim-to-sim evaluations.'
+  'Overview and results of the real-to-sim and sim-to-sim comparison experiments. Top-left: the experimental pipeline. Models are trained using either real-world data (real2sim) or synthetic data (sim2sim), and then evaluated in a digital twin environment with multiple random initializations. Top-right: quantitative test results showing the trajectory coverage rate (TCR) across different models under both settings. Bottom: qualitative trajectory comparisons for several representative test cases, with all results obtained from models trained on <i>&pi;</i><sub>0</sub>. For each case, the predicted trajectory is compared with the ground truth in both real-to-sim and sim-to-sim evaluations.'
 
 const realVideoRef = ref(null)
 const simVideoRef = ref(null)
@@ -107,7 +107,7 @@ onBeforeUnmount(() => {
         <div class="image-wrap">
           <img :src="realImage" alt="Real-to-Sim Analysis" class="analysis-image" />
         </div>
-        <p class="section-caption">{{ caption }}</p>
+        <p class="section-caption" v-html="caption"></p>
 
         <div class="video-comparison">
           <article class="video-card">

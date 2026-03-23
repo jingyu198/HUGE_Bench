@@ -3,7 +3,6 @@ import Title from './sections/Title.vue'
 import Overview from './sections/Overview.vue'
 import Abstract from './sections/Abstract.vue'
 import InstructionVideos from './sections/InstructionVideos.vue'
-import BibTeX from './sections/BibTeX.vue'
 import ImageSliderInner from './sections/ImageSliderInner.vue'
 import TaskPipeline from './sections/TaskPipeline.vue'
 import RealToSim from './sections/RealToSim.vue'
@@ -14,7 +13,6 @@ export default {
     Overview,
     Abstract,
     InstructionVideos,
-    BibTeX,
     ImageSliderInner,
     TaskPipeline,
     RealToSim
@@ -31,7 +29,6 @@ export default {
     <ImageSliderInner/>
     <TaskPipeline/>
     <RealToSim/>
-    <BibTeX/>
   </div>
 </template>
 
