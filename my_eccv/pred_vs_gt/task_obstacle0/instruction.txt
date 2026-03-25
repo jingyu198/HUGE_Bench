@@ -1,0 +1,26 @@
+prompt: Fly through the current building complex while avoiding obstacles.
+prompt_src: sample[task]
+used_default: False
+first_image_src: dataset[first_image]
+task_id: obstacle
+task_token: obstacle
+angle_mode: phi(rad)
+obstacle_angle_mode: yaw_legacy
+split: test_seen
+repo_id: task_obstacle/test_seen
+config_id: overall
+assets_task_dir: /mnt/jingyu/openpi/assets/pi0_overall/task_overall
+dataset_abs_path: /mnt/jingyu/lerobot_small/task_obstacle/test_seen
+dataset_load_mode: local(HF_LEROBOT_HOME)
+dataset_load_status: cache_hit_or_local
+env_id: 2_city
+episode_index: 13
+config_name: pi0_overall
+checkpoint_dir: /mnt/jingyu/openpi/checkpoints/pi0_overall/task_overall/24999
+max_steps_ep: 260
+exec_steps: 10
+smooth_overlap: True
+truncate_to_gt: True
+ndtw_eta: 3.0
+ndtw_yaw_weight: 0.1
+saved_files: compare_gt_vs_pred_3d.png, traj_gt_pred_xyzk.npz, instruction.txt, gt_pred_side_by_side.mp4
