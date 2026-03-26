@@ -1,5 +1,6 @@
 <script setup>
 import { computed, ref } from 'vue'
+import platformVideo from '../../../my_eccv/platform.mp4'
 
 const instructionModules = import.meta.glob(
   '../../../my_eccv/pred_vs_gt/*/instruction.txt',
@@ -144,6 +145,16 @@ const loadMore = () => {
         <el-row v-if="hasMore" justify="center" class="load-more-row">
           <el-button round size="large" class="load-more-button" @click="loadMore">Load More</el-button>
         </el-row>
+
+        <div class="platform-video-wrap">
+          <video
+            class="platform-video"
+            :src="platformVideo"
+            controls
+            playsinline
+            preload="metadata"
+          />
+        </div>
       </el-col>
     </el-row>
   </section>
@@ -246,6 +257,18 @@ const loadMore = () => {
   min-height: 54px;
   padding: 0 34px;
   font-size: 17px;
+}
+
+.platform-video-wrap {
+  margin-top: 28px;
+}
+
+.platform-video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  background: #000;
 }
 
 @media (max-width: 900px) {

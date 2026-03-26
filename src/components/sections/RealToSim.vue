@@ -1,7 +1,6 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import realImage from '../../../my_eccv/real.png'
-import platformVideo from '../../../my_eccv/platform.mp4'
 import trajRealVideo from '../../../my_eccv/traj_real.mp4'
 import trajSimVideo from '../../../my_eccv/traj_sim.mp4'
 
@@ -100,24 +99,6 @@ onBeforeUnmount(() => {
     <el-divider />
 
     <el-row justify="center">
-      <h1 class="section-title">Data Collection Platform</h1>
-    </el-row>
-
-    <el-row justify="center">
-      <el-col :xs="22" :sm="20" :md="18" :lg="14" :xl="12">
-        <div class="platform-video-wrap">
-          <video
-            class="platform-video"
-            :src="platformVideo"
-            controls
-            playsinline
-            preload="metadata"
-          />
-        </div>
-      </el-col>
-    </el-row>
-
-    <el-row justify="center">
       <h1 class="section-title">Real-to-Sim Analysis</h1>
     </el-row>
 
@@ -165,19 +146,6 @@ onBeforeUnmount(() => {
 
 .image-wrap {
   margin-top: 20px;
-}
-
-.platform-video-wrap {
-  margin-top: 20px;
-  margin-bottom: 34px;
-}
-
-.platform-video {
-  width: 100%;
-  display: block;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  background: #000;
 }
 
 .analysis-image {
