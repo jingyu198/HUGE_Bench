@@ -7,6 +7,7 @@ import ImageSliderInner from './sections/ImageSliderInner.vue'
 import TaskPipeline from './sections/TaskPipeline.vue'
 import RealToSim from './sections/RealToSim.vue'
 import MoreVisualization from './sections/MoreVisualization.vue'
+import PlatformVideo from './sections/PlatformVideo.vue'
 
 export default {
   components: {
@@ -17,7 +18,8 @@ export default {
     ImageSliderInner,
     TaskPipeline,
     RealToSim,
-    MoreVisualization
+    MoreVisualization,
+    PlatformVideo
   }
 }
 </script>
@@ -27,11 +29,12 @@ export default {
     <Title/>
     <Overview/>
     <Abstract/>
-    <InstructionVideos/>
+    <MoreVisualization/>
     <ImageSliderInner/>
     <TaskPipeline/>
     <RealToSim/>
-    <MoreVisualization/>
+    <PlatformVideo/>
+    <InstructionVideos/>
   </div>
 </template>
 
