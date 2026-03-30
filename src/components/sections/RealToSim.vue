@@ -1,11 +1,19 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import realImage from '../../../my_eccv/real.png'
+import lowLevelComparisonImage from '../../../my_eccv/more_findings/low_level.png'
+import scratchFinetuningComparisonImage from '../../../my_eccv/more_findings/scratch_finetuning_comparison_rendered.png'
 import trajRealVideo from '../../../my_eccv/traj_real.mp4'
 import trajSimVideo from '../../../my_eccv/traj_sim.mp4'
 
 const caption =
   'Overview and results of the real-to-sim and sim-to-sim comparison experiments. Top-left: the experimental pipeline. Models are trained using either real-world data (real2sim) or synthetic data (sim2sim), and then evaluated in a digital twin environment with multiple random initializations. Top-right: quantitative test results showing the trajectory coverage rate (TCR) across different models under both settings. Bottom: qualitative trajectory comparisons for several representative test cases, with all results obtained from models trained on <i>&pi;</i><sub>0</sub>. For each case, the predicted trajectory is compared with the ground truth in both real-to-sim and sim-to-sim evaluations.'
+
+const lowLevelCaption =
+  'Performance comparison between high-level and low-level instruction settings. TCRs are reported for Seen (S) and Unseen (U) splits across different models. Low-level instructions are obtained by concatenating multiple subtasks into explicit step-by-step commands, providing detailed guidance for action execution.'
+
+const scratchFinetuningCaption =
+  'Comparison across different models on two test splits. Blue bars denote training from scratch, while yellow bars denote finetuning.'
 
 const realVideoRef = ref(null)
 const simVideoRef = ref(null)
@@ -134,6 +142,38 @@ onBeforeUnmount(() => {
             />
           </article>
         </div>
+
+        <div class="more-findings">
+          <h2 class="more-findings-title">More Findings</h2>
+          <p class="more-findings-description">
+            We provide two additional analyses covering instruction granularity and the
+            impact of finetuning across model families.
+          </p>
+
+          <div class="findings-grid">
+            <article class="finding-card">
+              <div class="finding-media finding-image-wrap">
+                <img
+                  :src="lowLevelComparisonImage"
+                  alt="High-level versus low-level instruction comparison"
+                  class="finding-image"
+                />
+              </div>
+              <p class="finding-caption">{{ lowLevelCaption }}</p>
+            </article>
+
+            <article class="finding-card">
+              <div class="finding-media finding-image-wrap">
+                <img
+                  :src="scratchFinetuningComparisonImage"
+                  alt="Scratch versus finetuning comparison"
+                  class="finding-image"
+                />
+              </div>
+              <p class="finding-caption">{{ scratchFinetuningCaption }}</p>
+            </article>
+          </div>
+        </div>
       </el-col>
     </el-row>
   </section>
@@ -168,6 +208,60 @@ onBeforeUnmount(() => {
   gap: 20px;
 }
 
+.more-findings {
+  margin-top: 40px;
+}
+
+.more-findings-title {
+  margin: 0;
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 700;
+  text-align: center;
+}
+
+.more-findings-description {
+  margin: 10px auto 0;
+  max-width: 720px;
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.findings-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.finding-card {
+  padding: 18px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.finding-media {
+  overflow: hidden;
+  border-radius: 14px;
+  background: #f5f7fb;
+}
+
+.finding-image-wrap {
+  padding: 18px;
+}
+
+.finding-image {
+  width: 100%;
+  display: block;
+}
+
+.finding-caption {
+  margin: 14px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 .video-card {
   display: flex;
   flex-direction: column;
@@ -191,6 +285,10 @@ onBeforeUnmount(() => {
 
 @media (max-width: 700px) {
   .video-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .findings-grid {
     grid-template-columns: 1fr;
   }
 }
