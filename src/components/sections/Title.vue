@@ -5,15 +5,15 @@ const title = 'HUGE-Bench: A Benchmark for High-Level UAV Vision-Language-Action
 
 const authorRows = [
   [
-    { name: 'Jingyu Guo', marks: '1,*' },
-    { name: 'Ziye Chen', marks: '1,*' },
+    { name: 'Jingyu Guo', marks: '1,5,*' },
+    { name: 'Ziye Chen', marks: '1,5,*' },
     { name: 'Ziwen Li', marks: '2' },
     { name: 'Zhengqing Gao', marks: '2' },
     { name: 'Jiaxin Huang', marks: '2' },
   ],
   [
     { name: 'Hanlue Zhang', marks: '2' },
-    { name: 'Fengming Huang', marks: '3,4' },
+    { name: 'Fengming Huang', marks: '3,4,5' },
     { name: 'Yu Yao', marks: '4' },
     { name: 'Tongliang Liu', marks: '2,4,†' },
     { name: 'Mingming Gong', marks: '1,2,†' },
@@ -25,6 +25,7 @@ const institutes = [
   { marks: '2', name: 'MBZUAI' },
   { marks: '3', name: 'Navlyn' },
   { marks: '4', name: 'The University of Sydney' },
+  { marks: '5', name: 'Melsy Tech' },
 ]
 
 const resourceButtons = [
@@ -46,6 +47,7 @@ const resourceButtons = [
 ]
 
 const authorNotes = '* Equal contribution; † Corresponding author.'
+const internshipNote = 'Work done during internship at Melsy Tech.'
 </script>
 
 <template>
@@ -84,6 +86,10 @@ const authorNotes = '* Equal contribution; † Corresponding author.'
 
     <el-row justify="center">
       <div class="author-notes">{{ authorNotes }}</div>
+    </el-row>
+
+    <el-row justify="center">
+      <div class="internship-note">{{ internshipNote }}</div>
     </el-row>
 
     <el-row justify="center">
@@ -217,6 +223,14 @@ const authorNotes = '* Equal contribution; † Corresponding author.'
   font-size: 14px;
   margin: 18px 0 12px;
   text-align: center;
+}
+
+.internship-note {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: 0 0 8px;
+  text-align: center;
+  color: #606266;
 }
 
 .logo {
