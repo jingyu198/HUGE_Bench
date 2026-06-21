@@ -2,30 +2,31 @@
 const logo = ''
 
 const title = 'HUGE-Bench: A Benchmark for High-Level UAV Vision-Language-Action Tasks'
+const venue = 'ECCV 2026'
 
 const authorRows = [
   [
-    { name: 'Jingyu Guo', marks: '1,5,*' },
-    { name: 'Ziye Chen', marks: '1,5,*' },
-    { name: 'Ziwen Li', marks: '2' },
-    { name: 'Zhengqing Gao', marks: '2' },
-    { name: 'Jiaxin Huang', marks: '2' },
+    { name: 'Jingyu Guo', marks: '1,2,*' },
+    { name: 'Ziye Chen', marks: '1,2,*' },
+    { name: 'Ziwen Li', marks: '3' },
+    { name: 'Zhengqing Gao', marks: '3' },
+    { name: 'Jiaxin Huang', marks: '3' },
   ],
   [
-    { name: 'Hanlue Zhang', marks: '2' },
-    { name: 'Fengming Huang', marks: '3,4,5' },
-    { name: 'Yu Yao', marks: '4' },
-    { name: 'Tongliang Liu', marks: '2,4,†' },
-    { name: 'Mingming Gong', marks: '1,2,†' },
+    { name: 'Hanlue Zhang', marks: '3' },
+    { name: 'Fengming Huang', marks: '2,4,5' },
+    { name: 'Yu Yao', marks: '5' },
+    { name: 'Tongliang Liu', marks: '3,5,†' },
+    { name: 'Mingming Gong', marks: '1,3,†' },
   ],
 ]
 
 const institutes = [
   { marks: '1', name: 'The University of Melbourne' },
-  { marks: '2', name: 'MBZUAI' },
-  { marks: '3', name: 'Navlyn' },
-  { marks: '4', name: 'The University of Sydney' },
-  { marks: '5', name: 'Melsy Tech' },
+  { marks: '2', name: 'Melsy Tech' },
+  { marks: '3', name: 'MBZUAI' },
+  { marks: '4', name: 'Navlyn' },
+  { marks: '5', name: 'The University of Sydney' },
 ]
 
 const resourceButtons = [
@@ -59,6 +60,7 @@ const internshipNote = 'Work done during internship at Melsy Tech.'
     <el-row justify="center">
       <el-col :span="20">
         <h1 class="paper-title">{{ title }}</h1>
+        <p class="paper-venue">{{ venue }}</p>
       </el-col>
     </el-row>
 
@@ -134,8 +136,19 @@ const internshipNote = 'Work done during internship at Melsy Tech.'
   letter-spacing: 1px;
   font-size: 42px;
   line-height: 1.25;
-  margin: 20px 0 28px;
+  margin: 20px 0 10px;
   text-align: center;
+}
+
+.paper-venue {
+  margin: 0 0 24px;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-align: center;
+  color: #c62828;
+  text-transform: uppercase;
 }
 
 .authors {
@@ -227,10 +240,11 @@ const internshipNote = 'Work done during internship at Melsy Tech.'
 
 .internship-note {
   font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-size: 17px;
+  font-weight: 700;
   margin: 0 0 8px;
   text-align: center;
-  color: #606266;
+  color: #4d5965;
 }
 
 .logo {
@@ -244,6 +258,10 @@ const internshipNote = 'Work done during internship at Melsy Tech.'
 @media (max-width: 900px) {
   .paper-title {
     font-size: 34px;
+  }
+
+  .paper-venue {
+    font-size: 20px;
   }
 
   .author-row {
