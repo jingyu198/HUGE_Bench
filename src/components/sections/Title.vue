@@ -14,9 +14,9 @@ const authorRows = [
   ],
   [
     { name: 'Hanlue Zhang', marks: '3' },
-    { name: 'Fengming Huang', marks: '2,4' },
-    { name: 'Yu Yao', marks: '4' },
-    { name: 'Tongliang Liu', marks: '3,4,†' },
+    { name: 'Fengming Huang', marks: '2,4,5' },
+    { name: 'Yu Yao', marks: '5' },
+    { name: 'Tongliang Liu', marks: '3,5,†' },
     { name: 'Mingming Gong', marks: '1,3,†' },
   ],
 ]
@@ -25,7 +25,8 @@ const institutes = [
   { marks: '1', name: 'The University of Melbourne' },
   { marks: '2', name: 'Melsy Tech' },
   { marks: '3', name: 'MBZUAI' },
-  { marks: '4', name: 'The University of Sydney' },
+  { marks: '4', name: 'Navlyn' },
+  { marks: '5', name: 'The University of Sydney' },
 ]
 
 const resourceButtons = [
