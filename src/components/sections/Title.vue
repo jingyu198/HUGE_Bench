@@ -14,7 +14,7 @@ const authorRows = [
   ],
   [
     { name: 'Hanlue Zhang', marks: '3' },
-    { name: 'Fengming Huang', marks: '2,4,5' },
+    { name: 'Fengming Huang', marks: '4,5' },
     { name: 'Yu Yao', marks: '5' },
     { name: 'Tongliang Liu', marks: '3,5,†' },
     { name: 'Mingming Gong', marks: '1,3,†' },
