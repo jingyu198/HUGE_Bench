@@ -1,7 +1,7 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import realImage from '../../../my_eccv/real.png'
-import lowLevelComparisonImage from '../../../my_eccv/more_findings/low_level.png'
+import lowLevelComparisonImage from '../../../my_eccv/more_findings/high_vs_low_table.png'
 import scratchFinetuningComparisonImage from '../../../my_eccv/more_findings/scratch_finetuning_comparison_rendered.png'
 import trajRealVideo from '../../../my_eccv/traj_real.mp4'
 import trajSimVideo from '../../../my_eccv/traj_sim.mp4'
@@ -10,7 +10,7 @@ const caption =
   'Overview and results of the real-to-sim and sim-to-sim comparison experiments. Top-left: the experimental pipeline. Models are trained using either real-world data (real2sim) or synthetic data (sim2sim), and then evaluated in a digital twin environment with multiple random initializations. Top-right: quantitative test results showing the trajectory coverage rate (TCR) across different models under both settings. Bottom: qualitative trajectory comparisons for several representative test cases, with all results obtained from models trained on <i>&pi;</i><sub>0</sub>. For each case, the predicted trajectory is compared with the ground truth in both real-to-sim and sim-to-sim evaluations.'
 
 const lowLevelCaption =
-  'Performance comparison between high-level and low-level instruction settings. TCRs are reported for Seen (S) and Unseen (U) splits across different models. Low-level instructions are obtained by concatenating multiple subtasks into explicit step-by-step commands, providing detailed guidance for action execution.'
+  'Comparison between low-level and high-level instruction settings on HUGE-Bench VLA across representative baseline models. We report Avg. TCR, nDTW, NTP, CR, and CSPL under both instruction granularities.'
 
 const scratchFinetuningCaption =
   'Comparison across different models on two test splits. Blue bars denote training from scratch, while yellow bars denote finetuning.'

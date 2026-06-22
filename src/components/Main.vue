@@ -5,6 +5,7 @@ import Abstract from './sections/Abstract.vue'
 import InstructionVideos from './sections/InstructionVideos.vue'
 import ImageSliderInner from './sections/ImageSliderInner.vue'
 import TaskPipeline from './sections/TaskPipeline.vue'
+import ResultsSection from './sections/ResultsSection.vue'
 import RealToSim from './sections/RealToSim.vue'
 import MoreVisualization from './sections/MoreVisualization.vue'
 import PlatformVideo from './sections/PlatformVideo.vue'
@@ -17,6 +18,7 @@ export default {
     InstructionVideos,
     ImageSliderInner,
     TaskPipeline,
+    ResultsSection,
     RealToSim,
     MoreVisualization,
     PlatformVideo
@@ -32,6 +34,7 @@ export default {
     <MoreVisualization/>
     <ImageSliderInner/>
     <TaskPipeline/>
+    <ResultsSection/>
     <RealToSim/>
     <PlatformVideo/>
     <InstructionVideos/>
