@@ -6,7 +6,7 @@ const venue = 'ECCV 2026'
 
 const authorRows = [
   [
-    { name: 'Jingyu Guo', marks: '1,2,*' },
+    { name: 'Jingyu Guo', marks: '1,2,*', link: 'https://jingyu198.github.io/jingyu.github.io/' },
     { name: 'Ziye Chen', marks: '1,2,*' },
     { name: 'Ziwen Li', marks: '3' },
     { name: 'Zhengqing Gao', marks: '3' },
@@ -69,7 +69,17 @@ const internshipNote = 'Work done during internship at Melsy Tech.'
         <div class="authors">
           <div v-for="(row, index) in authorRows" :key="index" class="author-row">
             <span v-for="author in row" :key="author.name" class="author-pill">
-              {{ author.name }}<sup class="name-sup">{{ author.marks }}</sup>
+              <a
+                v-if="author.link"
+                class="author-link"
+                :href="author.link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {{ author.name }}
+              </a>
+              <span v-else>{{ author.name }}</span>
+              <sup class="name-sup">{{ author.marks }}</sup>
             </span>
           </div>
         </div>
@@ -169,6 +179,16 @@ const internshipNote = 'Work done during internship at Melsy Tech.'
   font-size: 20px;
   line-height: 1.6;
   white-space: nowrap;
+}
+
+.author-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.author-link:hover {
+  color: #235b8e;
+  border-bottom: 1px solid currentColor;
 }
 
 .name-sup {
