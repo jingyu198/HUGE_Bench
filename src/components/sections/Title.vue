@@ -15,7 +15,7 @@ const authorRows = [
   [
     { name: 'Hanlue Zhang', marks: '3', link: 'https://www.linkedin.com/in/hanlue-zhang-5913a4248/' },
     { name: 'Fengming Huang', marks: '4,5' },
-    { name: 'Yu Yao', marks: '5', link: 'https://scholar.google.com/citations?user=OkcaMKAAAAAJ&hl=en' },
+    { name: 'Yu Yao', marks: '5', link: 'https://a5507203.github.io/' },
     { name: 'Tongliang Liu', marks: '3,5,†', link: 'https://tongliang-liu.github.io/' },
     { name: 'Mingming Gong', marks: '1,3,†', link: 'https://mingming-gong.github.io/' },
   ],
