@@ -7,17 +7,17 @@ const venue = 'ECCV 2026'
 const authorRows = [
   [
     { name: 'Jingyu Guo', marks: '1,2,*', link: 'https://jingyu198.github.io/jingyu.github.io/' },
-    { name: 'Ziye Chen', marks: '1,2,*' },
-    { name: 'Ziwen Li', marks: '3' },
-    { name: 'Zhengqing Gao', marks: '3' },
-    { name: 'Jiaxin Huang', marks: '3' },
+    { name: 'Ziye Chen', marks: '1,2,*', link: 'https://scholar.google.com/citations?user=vV9nK44AAAAJ&hl=en' },
+    { name: 'Ziwen Li', marks: '3', link: 'https://scholar.google.com/citations?user=R-2FQZEAAAAJ&hl=zh-CN' },
+    { name: 'Zhengqing Gao', marks: '3', link: 'https://scholar.google.com/citations?user=wjE6m5UAAAAJ&hl=en' },
+    { name: 'Jiaxin Huang', marks: '3', link: 'https://scholar.google.com/citations?user=jfx4enUAAAAJ&hl=zh-CN' },
   ],
   [
     { name: 'Hanlue Zhang', marks: '3' },
     { name: 'Fengming Huang', marks: '4,5' },
-    { name: 'Yu Yao', marks: '5' },
-    { name: 'Tongliang Liu', marks: '3,5,†' },
-    { name: 'Mingming Gong', marks: '1,3,†' },
+    { name: 'Yu Yao', marks: '5', link: 'https://scholar.google.com/citations?user=OkcaMKAAAAAJ&hl=en' },
+    { name: 'Tongliang Liu', marks: '3,5,†', link: 'https://tongliang-liu.github.io/' },
+    { name: 'Mingming Gong', marks: '1,3,†', link: 'https://mingming-gong.github.io/' },
   ],
 ]
 
