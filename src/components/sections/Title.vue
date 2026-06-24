@@ -13,7 +13,7 @@ const authorRows = [
     { name: 'Jiaxin Huang', marks: '3', link: 'https://scholar.google.com/citations?user=jfx4enUAAAAJ&hl=zh-CN' },
   ],
   [
-    { name: 'Hanlue Zhang', marks: '3' },
+    { name: 'Hanlue Zhang', marks: '3', link: 'https://www.linkedin.com/in/hanlue-zhang-5913a4248/' },
     { name: 'Fengming Huang', marks: '4,5' },
     { name: 'Yu Yao', marks: '5', link: 'https://scholar.google.com/citations?user=OkcaMKAAAAAJ&hl=en' },
     { name: 'Tongliang Liu', marks: '3,5,†', link: 'https://tongliang-liu.github.io/' },
