@@ -43,7 +43,7 @@ const resourceButtons = [
   {
     label: 'Dataset',
     icon: 'dataset',
-    link: 'https://huggingface.co/datasets/yu781986168/HUGE_PI',
+    link: 'https://huggingface.co/datasets/yu781986168/HUGE_Dataset_v0',
   },
 ]
 
