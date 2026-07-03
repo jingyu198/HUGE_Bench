@@ -25,7 +25,6 @@ const institutes = [
   { marks: '1', name: 'The University of Melbourne' },
   { marks: '2', name: 'Melsy Tech' },
   { marks: '3', name: 'MBZUAI' },
-  { marks: '4', name: 'Navlyn' },
   { marks: '5', name: 'The University of Sydney' },
 ]
 
