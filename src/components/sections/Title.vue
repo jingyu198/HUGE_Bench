@@ -15,8 +15,8 @@ const authorRows = [
   [
     { name: 'Hanlue Zhang', marks: '3', link: 'https://www.linkedin.com/in/hanlue-zhang-5913a4248/' },
     { name: 'Fengming Huang', marks: '2' },
-    { name: 'Yu Yao', marks: '5', link: 'https://a5507203.github.io/' },
-    { name: 'Tongliang Liu', marks: '5,3,†', link: 'https://tongliang-liu.github.io/' },
+    { name: 'Yu Yao', marks: '4', link: 'https://a5507203.github.io/' },
+    { name: 'Tongliang Liu', marks: '4,3,†', link: 'https://tongliang-liu.github.io/' },
     { name: 'Mingming Gong', marks: '1,3,†', link: 'https://mingming-gong.github.io/' },
   ],
 ]
@@ -25,7 +25,7 @@ const institutes = [
   { marks: '1', name: 'The University of Melbourne' },
   { marks: '2', name: 'Melsy Tech' },
   { marks: '3', name: 'MBZUAI' },
-  { marks: '5', name: 'The University of Sydney' },
+  { marks: '4', name: 'The University of Sydney' },
 ]
 
 const resourceButtons = [
